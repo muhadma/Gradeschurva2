@@ -105,12 +105,25 @@ class Grade {
 
         void print() {
             for (int i = 0; i < num; i++) {
-                cout << a[i]->name << endl;
+                cout << i+1 << ". " <<  a[i]->name << endl;
                 cout << "Average Grade: " << a[i]->average << endl;
                 if (a[i]->passed == 1) {
                     cout << "PASSED" << endl;
                 } else {
                     cout << "FAILED" << endl;
+                }
+            }
+        }
+
+        void ranking() {
+            cout << "Top " << num << endl;
+            for (int i = 0; i < num; i++) {
+                for (int j = 0; j < num; j++) {
+                    if (a[i]->average > a[j]->average) {
+                        Student *temp = a[j];
+                        a[j] = a[i];
+                        a[i] = temp;
+                    }
                 }
             }
         }
