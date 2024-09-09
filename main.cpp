@@ -21,5 +21,6 @@ int main() {
     n1->calculateAverage();
     n1->calculateOverallAvg();
     n1->isPassed();
+    n1->ranking();
     n1->print();
 }
